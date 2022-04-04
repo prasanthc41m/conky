@@ -8,4 +8,4 @@ conky > /dev/null 2>&1
 exit
 line="@reboot conky"
 (crontab -u $(whoami) -l; echo "$line" ) | crontab -u $(whoami) -
-echo "Conky is running..."
+echo 'Conky is running...'
