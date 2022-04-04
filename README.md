@@ -1,4 +1,4 @@
 # conky
 Conky installation
 
-`cd /tmp && rm -rf conky* && wget https://raw.githubusercontent.com/prasanthc41m/conky/main/conky-install.sh && sudo bash conky-install.sh`
+`cd /tmp && sudo rm -rf conky* && wget https://raw.githubusercontent.com/prasanthc41m/conky/main/conky-install.sh && sudo bash conky-install.sh`
