@@ -4,7 +4,7 @@ apt install conky -y
 cd /tmp/
 git clone https://github.com/prasanthc41m/conky
 cd /tmp/conky
-mv /etc/conky/conky/* .
+cp -f /etc/conky/conky/* .
 conky &&
 exit
 line="@reboot conky"
