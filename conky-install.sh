@@ -1,7 +1,7 @@
 #!/bin/bash
 #Conky from c41m
 apt install conky -y
-cd /tmp/ && rm -rf conky*
+cd /tmp/ && rm -rf conky/
 git clone https://github.com/prasanthc41m/conky
 cp -rf conky/* /etc/conky/
 conky > /dev/null 2>&1
