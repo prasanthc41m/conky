@@ -6,5 +6,6 @@ git clone https://github.com/prasanthc41m/conky
 cd /tmp/conky
 mv /etc/conky/conky/* .
 conky &&
+exit
 line="@reboot conky"
 (crontab -u $(whoami) -l; echo "$line" ) | crontab -u $(whoami) -
