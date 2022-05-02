@@ -1,7 +1,7 @@
 #!/bin/bash
 #Conky from c41m
 # install conky on debian based os with requirements
-sudo apt install conky-all git fonts-font-awesome grep libx11-dev gawk lm-sensors smartmontools -y
+sudo apt install conky-all git fonts-font-awesome grep libx11-dev gawk lm-sensors smartmontools libcairo2-dev automake pkg-config libtool  -y
 cd /tmp/ && rm -rf conky/
 git clone https://github.com/prasanthc41m/conky
 sudo cp -rf conky /etc/
