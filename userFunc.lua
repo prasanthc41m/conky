@@ -297,7 +297,7 @@ function conky_igputemp()
     else
         igpu_temp_update_freq = 6
     end
-    return "${font FontAwesome} ${font}" .. igpu_temp
+    return "${font FontAwesome} ${font :size= 9}" .. igpu_temp
 end
 
 -- Returns Nth fan's speed in RPM
