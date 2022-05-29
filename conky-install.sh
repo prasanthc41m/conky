@@ -24,4 +24,4 @@ sudo pkill conky
 conky > /dev/null 2>&1
 line="@reboot conky"
 (crontab -u $(whoami) -l; echo "$line" ) | crontab -u $(whoami) -
-echo -e "${Y}""Conky is running...""${NOCOL}"
+echo -e "${G}""Conky is running...""${NOCOL}"
