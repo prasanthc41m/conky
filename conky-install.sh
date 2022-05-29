@@ -16,7 +16,7 @@ wlan=$(basename /sys/class/net/w*)
 echo -e Your Ethernet is "${Y}""$eth""${NOCOL}" and WiFi is "${Y}""$wlan""${NOCOL}"
 result1="s/eth/$eth/g"
 result2="s/wlan/$wlan/g"
-echo -e debug: ${Y}$result1 $result2${NOCOL}
+#echo -e debug: ${Y}$result1 $result2${NOCOL}
 grep -rl 'eth' /etc/conky/conky.conf | xargs sed -i "$result1"  
 grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 #GPU configuration
