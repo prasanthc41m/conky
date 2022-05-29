@@ -18,12 +18,12 @@ result1="s/eth/$eth/g"
 result2="s/wlan/$wlan/g"
 #echo -e debug: ${Y}$result1 $result2${NOCOL}
 grep -rl 'eth' /etc/conky/conky.conf | xargs sed -i "$result1"  
-grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2""${Y}"
+grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 #GPU configuration
 while true
 do
-      read -r -p "Do you have Nvidia GPU? [Y/n] " input
- 
+      read -r -p $'\033[0;33m "Do you have Nvidia GPU? [Y/n]"'   input
+      
       case $input in
             [yY][eE][sS]|[yY])
                   echo "Yes" 
@@ -38,7 +38,7 @@ do
                   ;;
       esac      
 done
-# make executable "${NOCOL}"
+# make executable
 sudo chmod +x /etc/conky/*
 sudo pkill conky
 conky > /dev/null 2>&1
