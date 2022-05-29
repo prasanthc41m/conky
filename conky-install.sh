@@ -18,11 +18,11 @@ result1="s/eth/$eth/g"
 result2="s/wlan/$wlan/g"
 #echo -e debug: ${Y}$result1 $result2${NOCOL}
 grep -rl 'eth' /etc/conky/conky.conf | xargs sed -i "$result1"  
-grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
+grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2""${Y}"
 #GPU configuration
 while true
 do
-      read -r -p '\033[0;33m' "Do you have Nvidia GPU? [Y/n] " '\033[0m' input
+      read -r -p "Do you have Nvidia GPU? [Y/n] " input
  
       case $input in
             [yY][eE][sS]|[yY])
@@ -30,7 +30,7 @@ do
                   break
                   ;;
             [nN][oO]|[nN])
-                  echo "No" ; sed -i '/^${color2}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color ${goto 210} ${exec nvidia-smi | grep % | cut -c 61-63} % ${goto 270} ${exec nvidia-smi | grep % | cut -c 37-40} MB ${goto 340}${exec nvidia-smi | grep % | cut -c 21-23} W       ${color3}${nvidia temp}°C$/s/^/#/' /etc/conky/conky.conf ; sed -i '/^${color2}AMD Radeon     ${color3}${font :size= 9}${lua_parse igputemp}°C$/s/^/#/' /etc/conky/conky.conf ; echo -e "${Y}""Done""${NOCOL}"
+                  echo "No" ; sudo sed -i '/^${color2}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color ${goto 210} ${exec nvidia-smi | grep % | cut -c 61-63} % ${goto 270} ${exec nvidia-smi | grep % | cut -c 37-40} MB ${goto 340}${exec nvidia-smi | grep % | cut -c 21-23} W       ${color3}${nvidia temp}°C$/s/^/#/' /etc/conky/conky.conf ; sudo sed -i '/^${color2}AMD Radeon     ${color3}${font :size= 9}${lua_parse igputemp}°C$/s/^/#/' /etc/conky/conky.conf ; echo -e "${Y}""Done""${NOCOL}"
                   break
                   ;;
             *)
@@ -38,7 +38,7 @@ do
                   ;;
       esac      
 done
-# make executable
+# make executable "${NOCOL}"
 sudo chmod +x /etc/conky/*
 sudo pkill conky
 conky > /dev/null 2>&1
