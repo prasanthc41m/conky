@@ -25,3 +25,4 @@ conky > /dev/null 2>&1
 line="@reboot conky"
 (crontab -u $(whoami) -l; echo "$line" ) | crontab -u $(whoami) -
 echo -e "${G}""Conky is running...""${NOCOL}"
+rm -rf /tmp/conky*
