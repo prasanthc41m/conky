@@ -17,7 +17,7 @@ echo -e Your Ethernet is "${Y}""$eth""${NOCOL}" and WiFi is "${Y}""$wlan""${NOCO
 result1="s/eth/$eth/g"
 result2="s/wlan/$wlan/g"
 #echo $result1 ; echo $result2
-grep -rl 'eth' /tmp/conky.conf | xargs sed -i "$result1" & grep -rl 'wlan' /tmp/conky.conf | xargs sed -i "$result2"
+grep -rl 'eth' /etc/conky/conky.conf | xargs sed -i "$result1" & grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 # make executable
 sudo chmod +x /etc/conky/*
 sudo pkill conky
