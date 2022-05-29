@@ -22,8 +22,8 @@ grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 #GPU configuration
 while true
 do
-      read -r -p "Do you have Nvidia GPU? [Y/n]"   input
-      
+read -r -p $'\033[0;33m "Do you have Nvidia GPU? [Y/n]"'   input
+
       case $input in
             [yY][eE][sS]|[yY])
                   echo "Yes" 
