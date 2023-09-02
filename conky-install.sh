@@ -1,10 +1,10 @@
 #!/bin/bash
 #Conky from c41m
 
-if [  -n "$(uname -a | grep Ubuntu)" ]; then
-    sudo apt install conky-all git fonts-font-awesome grep libx11-dev gawk lm-sensors smartmontools libcairo2-dev automake pkg-config libtool glx-utils glx-utils -y
+if [  -n "$(uname -a | grep Fedora)" ]; then
+    sudo dnf install conky git fontawesome5-fonts-all fontawesome-fonts grep libX11-devel.x86_64 gawk lm_sensors.x86_64 smartmontools automake pkg-config libtool hwinfo.x86_64 glx-utils.x86_64  -y    
 else
-    sudo dnf install conky git fontawesome5-fonts-all fontawesome-fonts grep libX11-devel.x86_64 gawk lm_sensors.x86_64 smartmontools automake pkg-config libtool hwinfo.x86_64 glx-utils.x86_64  -y
+    sudo apt install conky-all git fonts-font-awesome grep libx11-dev gawk lm-sensors smartmontools libcairo2-dev automake pkg-config libtool glx-utils glx-utils -y
 fi  
 sudo dnf install conky git fontawesome5-fonts-all fontawesome-fonts grep libX11-devel.x86_64 gawk lm_sensors.x86_64 smartmontools automake pkg-config libtool hwinfo.x86_64 glx-utils.x86_64  -y
 cd /tmp/ && rm -rf conky/
