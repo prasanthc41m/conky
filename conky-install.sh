@@ -27,8 +27,7 @@ grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 # make executable
 sudo chmod +x /etc/conky/*
 sudo pkill conky
-conky > /dev/null 2>&1
-line="@reboot conky"
-(crontab -u $(whoami) -l; echo "$line" ) | crontab -u $(whoami) -
+mkdir ~/.config/autostart
+cp /usr/share/applicaions/conky.desktop ~/.config/autostart
 echo -e "${G}""Conky is running...""${NOCOL}"
 rm -rf /tmp/conky*
