@@ -27,7 +27,7 @@ grep -rl 'wlan' /etc/conky/conky.conf | xargs sed -i "$result2"
 # make executable
 sudo chmod +x /etc/conky/*
 sudo pkill conky
-mkdir ~/.config/autostart
+mkdir -p ~/.config/autostart
 cp /usr/share/applicaions/conky.desktop ~/.config/autostart
 echo -e "${G}""Conky is running...""${NOCOL}"
 rm -rf /tmp/conky*
